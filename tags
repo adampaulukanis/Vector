@@ -1,0 +1,18 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+beforeEach	tests/testVector.js	/^beforeEach(function () {$/;"	M
+describe	tests/testVector.js	/^  describe('Constructor', function () {$/;"	M
+describe	tests/testVector.js	/^  describe('minus', function () {$/;"	M
+describe	tests/testVector.js	/^  describe('plus', function () {$/;"	M
+describe	tests/testVector.js	/^  describe('property length', function () {$/;"	M
+describe	tests/testVector.js	/^describe('Vector class', function () {$/;"	M
+it	tests/testVector.js	/^    it('should create a right object', function () {$/;"	M
+it	tests/testVector.js	/^    it('should return a new vector that has the difference of the two vectors', function () {$/;"	M
+it	tests/testVector.js	/^    it('should return a new vector that has the sum of the two vectors', function () {$/;"	M
+it	tests/testVector.js	/^    it('should return the distance of the point (0, 0) from the origin (0, 0)', function () {$/;"	M
+it	tests/testVector.js	/^    it('should return the distance of the point (3, 4) from the origin (0, 0)', function () {$/;"	M
+testVector	tests/testVector.js	/^      let testVector = new Vector(2, 3)$/;"	V
