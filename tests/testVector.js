@@ -104,4 +104,18 @@ describe('Vector class, constructor', function () {
       })
     }
   })
+
+  describe('the times method scales a vector by a given amount', function () {
+    const tests = new Map()
+    tests.set(() => (new Vector(1)).times(1), [1])
+    tests.set(() => (new Vector(1)).times(5), [5])
+    tests.set(() => (new Vector(1, 2)).times(9), [9, 18])
+    tests.set(() => (new Vector(1, 2, 3)).times(3), [3, 6, 9])
+
+    for (const t of tests) {
+      it(`${t[0].toString().slice(6)} === [${t[1]}]`, function () {
+        assert.deepStrictEqual(t[0](), t[1])
+      })
+    }
+  })
 })

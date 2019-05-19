@@ -43,4 +43,12 @@ module.exports = class Vector {
     })
     return diff
   }
+
+  times (number) {
+    const returnVector = []
+    this._dimensions.forEach((el) => {
+      returnVector.push(el * number)
+    })
+    return returnVector
+  }
 }
