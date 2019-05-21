@@ -1,7 +1,19 @@
 'use strict'
 
+/**
+ * Represents a multi-dimensional vector.
+ * @module Vector
+ * @class
+ * @param {(number|Array)} dimensions the value of n-th dimension, e.g.: x, y, ...
+ * @returns {Vector}
+ *
+ * @example
+ * new Vector(1, 2)
+ * // means x=1, y=2, n=2
+ */
 module.exports = class Vector {
   constructor (...dimensions) {
+    /** @private */
     this._dimensions = dimensions
     this.length = Vector.getLength(this)
   }
@@ -22,6 +34,11 @@ module.exports = class Vector {
     return Math.sqrt(length)
   }
 
+  /**
+   * Adds vectors
+   * @param {vector}
+   * @returns {vector} The sum of two vectors
+   */
   plus (vector) {
     let dthis = this._dimensions.length
     let dvector = vector._dimensions.length
@@ -33,6 +50,11 @@ module.exports = class Vector {
     return sum
   }
 
+  /**
+   * Subtracts vectors
+   * @param {vector}
+   * @returns {vector} The difference of two vectors
+   */
   minus (vector) {
     let dthis = this._dimensions.length
     let dvector = vector._dimensions.length
@@ -44,6 +66,11 @@ module.exports = class Vector {
     return diff
   }
 
+  /**
+   * The times method scales a vector by a given amount
+   * @param {number}
+   * @returns {vector}
+   */
   times (number) {
     const returnVector = []
     this._dimensions.forEach((el) => {
