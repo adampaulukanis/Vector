@@ -68,15 +68,15 @@ describe('Vector class, constructor', function () {
 
   describe('plus: returns a new vector that has the sum/difference of the two vectors', function () {
     const tests = new Map()
-    tests.set(() => (new Vector(1)).plus(new Vector(5)), [6])
-    tests.set(() => (new Vector(1, 1)).plus(new Vector(1, 1)), [2, 2])
-    tests.set(() => (new Vector(1, 1, 1)).plus(new Vector(2, 3, 4)), [3, 4, 5])
-    tests.set(() => (new Vector(1)).plus(new Vector(1, 1)), [2, 1])
-    tests.set(() => (new Vector(0)).plus(new Vector(10)), [10])
-    tests.set(() => (new Vector(1, 1, 1, 1)).plus(new Vector(1, 2, 3, 4, 5)), [2, 3, 4, 5, 5])
-    tests.set(() => (new Vector()).plus(new Vector()), [])
-    tests.set(() => (new Vector(1)).plus(new Vector()), [1])
-    tests.set(() => (new Vector()).plus(new Vector(1)), [1])
+    tests.set(() => (new Vector(1)).plus(new Vector(5)), new Vector([6]))
+    tests.set(() => (new Vector(1, 1)).plus(new Vector(1, 1)), new Vector([2, 2]))
+    tests.set(() => (new Vector(1, 1, 1)).plus(new Vector(2, 3, 4)), new Vector([3, 4, 5]))
+    tests.set(() => (new Vector(1)).plus(new Vector(1, 1)), new Vector([2, 1]))
+    tests.set(() => (new Vector(0)).plus(new Vector(10)), new Vector([10]))
+    tests.set(() => (new Vector(1, 1, 1, 1)).plus(new Vector(1, 2, 3, 4, 5)), new Vector([2, 3, 4, 5, 5]))
+    tests.set(() => (new Vector()).plus(new Vector()), new Vector([]))
+    tests.set(() => (new Vector(1)).plus(new Vector()), new Vector([1]))
+    tests.set(() => (new Vector()).plus(new Vector(1)), new Vector([1]))
 
     for (const t of tests) {
       it(`${t[0].toString().slice(6)} === [${t[1]}]`, function () {
@@ -87,16 +87,16 @@ describe('Vector class, constructor', function () {
 
   describe('minus: returns a new vector that has the difference of the two vectors', function () {
     const tests = new Map()
-    tests.set(() => (new Vector(1)).minus(new Vector(5)), [-4])
-    tests.set(() => (new Vector(1, 1)).minus(new Vector(1, 1)), [0, 0])
-    tests.set(() => (new Vector(2, 3, 4)).minus(new Vector(1, 1, 1)), [1, 2, 3])
-    tests.set(() => (new Vector(1, 0)).minus(new Vector(1)), [0, 0])
-    tests.set(() => (new Vector(0)).minus(new Vector(10)), [-10])
-    tests.set(() => (new Vector(1, 2, 3, 4, 5)).minus(new Vector(1, 1, 1, 1, 1)), [0, 1, 2, 3, 4])
-    tests.set(() => (new Vector()).minus(new Vector()), [])
-    tests.set(() => (new Vector(1)).minus(new Vector()), [1])
-    tests.set(() => (new Vector()).minus(new Vector(1)), [-1])
-    tests.set(() => (new Vector(3, 2)).minus(new Vector(-1, 3)), [4, -1])
+    tests.set(() => (new Vector(1)).minus(new Vector(5)), new Vector([-4]))
+    tests.set(() => (new Vector(1, 1)).minus(new Vector(1, 1)), new Vector([0, 0]))
+    tests.set(() => (new Vector(2, 3, 4)).minus(new Vector(1, 1, 1)), new Vector([1, 2, 3]))
+    tests.set(() => (new Vector(1, 0)).minus(new Vector(1)), new Vector([0, 0]))
+    tests.set(() => (new Vector(0)).minus(new Vector(10)), new Vector([-10]))
+    tests.set(() => (new Vector(1, 2, 3, 4, 5)).minus(new Vector(1, 1, 1, 1, 1)), new Vector([0, 1, 2, 3, 4]))
+    tests.set(() => (new Vector()).minus(new Vector()), new Vector([]))
+    tests.set(() => (new Vector(1)).minus(new Vector()), new Vector([1]))
+    tests.set(() => (new Vector()).minus(new Vector(1)), new Vector([-1]))
+    tests.set(() => (new Vector(3, 2)).minus(new Vector(-1, 3)), new Vector([4, -1]))
 
     for (const t of tests) {
       it(`${t[0].toString().slice(6)} === [${t[1]}]`, function () {
@@ -107,10 +107,10 @@ describe('Vector class, constructor', function () {
 
   describe('the times method scales a vector by a given amount', function () {
     const tests = new Map()
-    tests.set(() => (new Vector(1)).times(1), [1])
-    tests.set(() => (new Vector(1)).times(5), [5])
-    tests.set(() => (new Vector(1, 2)).times(9), [9, 18])
-    tests.set(() => (new Vector(1, 2, 3)).times(3), [3, 6, 9])
+    tests.set(() => (new Vector(1)).times(1), new Vector([1]))
+    tests.set(() => (new Vector(1)).times(5), new Vector([5]))
+    tests.set(() => (new Vector(1, 2)).times(9), new Vector([9, 18]))
+    tests.set(() => (new Vector(1, 2, 3)).times(3), new Vector([3, 6, 9]))
 
     for (const t of tests) {
       it(`${t[0].toString().slice(6)} === [${t[1]}]`, function () {

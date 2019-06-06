@@ -47,7 +47,7 @@ module.exports = class Vector {
     sum.forEach((i, index) => {
       sum[index] = ~~this._dimensions[index] + ~~vector._dimensions[index]
     })
-    return sum
+    return new Vector(sum)
   }
 
   /**
@@ -63,7 +63,7 @@ module.exports = class Vector {
     diff.forEach((i, index) => {
       diff[index] = ~~this._dimensions[index] - ~~vector._dimensions[index]
     })
-    return diff
+    return new Vector(diff)
   }
 
   /**
@@ -76,6 +76,6 @@ module.exports = class Vector {
     this._dimensions.forEach((el) => {
       returnVector.push(el * number)
     })
-    return returnVector
+    return new Vector(returnVector)
   }
 }
