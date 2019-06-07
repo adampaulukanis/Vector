@@ -79,7 +79,7 @@ describe('Vector class, constructor', function () {
     tests.set(() => (new Vector()).plus(new Vector(1)), new Vector([1]))
 
     for (const t of tests) {
-      it(`${t[0].toString().slice(6)} === [${t[1]}]`, function () {
+      it(`${t[0].toString().slice(6)} === Vector [${t[1]._dimensions}]`, function () {
         assert.deepStrictEqual(t[0](), t[1])
       })
     }
@@ -99,7 +99,7 @@ describe('Vector class, constructor', function () {
     tests.set(() => (new Vector(3, 2)).minus(new Vector(-1, 3)), new Vector([4, -1]))
 
     for (const t of tests) {
-      it(`${t[0].toString().slice(6)} === [${t[1]}]`, function () {
+      it(`${t[0].toString().slice(6)} === Vector [${t[1]._dimensions}]`, function () {
         assert.deepStrictEqual(t[0](), t[1])
       })
     }
@@ -113,7 +113,7 @@ describe('Vector class, constructor', function () {
     tests.set(() => (new Vector(1, 2, 3)).times(3), new Vector([3, 6, 9]))
 
     for (const t of tests) {
-      it(`${t[0].toString().slice(6)} === [${t[1]}]`, function () {
+      it(`${t[0].toString().slice(6)} === Vector [${t[1]._dimensions}]`, function () {
         assert.deepStrictEqual(t[0](), t[1])
       })
     }
