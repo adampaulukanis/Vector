@@ -15,20 +15,15 @@ module.exports = class Vector {
   constructor (...dimensions) {
     /** @private */
     this._dimensions = dimensions
-    this.length = Vector.getLength(this)
   }
 
-  /*
-   * Returns distance from where you are to point 0
-   *
-   * Question: What do I want to see when vector is empty? I mean new Vector()
-   */
-  static getLength (vector) {
+  get length () {
     let length = 0
-    if (vector._dimensions.length === 0) return 0
-    if (vector._dimensions.length === 1) return vector._dimensions[0]
+    if (this._dimensions.length === 0) return 0
+    if (this._dimensions.length === 1) return this._dimensions[0]
 
-    vector._dimensions.forEach((el) => {
+    /* very tricky, don't expect to understand it ;^) */
+    this._dimensions.forEach(el => {
       length += ((0 - el) * (0 - el))
     })
     return Math.sqrt(length)
