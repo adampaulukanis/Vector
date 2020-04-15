@@ -56,6 +56,7 @@ module.exports = class Vector {
     let length = dthis > dvector ? dthis : dvector
     let diff = Array(length).fill(0)
     diff.forEach((i, index) => {
+      // ~~OBJ converts it to Number
       diff[index] = ~~this._dimensions[index] - ~~vector._dimensions[index]
     })
     return new Vector(diff)
