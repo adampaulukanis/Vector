@@ -1,23 +1,23 @@
 {
-  "name": "vector",
-  "version": "0.0.0",
-  "description": "Simple Vector class written in JS",
-  "main": "index.js",
-  "scripts": {
-    "test": "./node_modules/mocha/bin/mocha test*.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/adam17/Vector.git"
-  },
-  "author": "Adam Paulukanis",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/adam17/Vector/issues"
-  },
-  "homepage": "https://github.com/adam17/Vector#readme",
-  "type": "module",
-  "dependencies": {
-    "mocha": "^8.2.0"
-  }
+    "name": "vector",
+    "version": "0.0.0",
+    "description": "Simple Vector class written in JS",
+    "main": "index.js",
+    "scripts": {
+        "test": "./node_modules/mocha/bin/mocha test*.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/adam17/Vector.git"
+    },
+    "author": "Adam Paulukanis",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/adam17/Vector/issues"
+    },
+    "homepage": "https://github.com/adam17/Vector#readme",
+    "type": "module",
+    "dependencies": {
+        "mocha": "^8.2.0"
+    }
 }
