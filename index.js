@@ -1,55 +1,70 @@
-'use strict'
+"use strict";
 
 /**
- * Represents a 2D vector.
+ * Represents a vector.
  *
  * Thanks to https://www.mathsisfun.com/algebra/vectors.html
  */
 export default class Vector {
     #data = [];
-    constructor (x, y) {
-        this.#data[0] = x;
-        this.#data[1] = y;
+    constructor(...dimensions) {
+        dimensions.forEach((d) => {
+            this.#data.push(d);
+        });
     }
-
-    get x(){
+    //{ For convenience, I provide well-known 3 dimensions as x, y and z
+    get x() {
         return this.#data[0];
     }
-
-    get y(){
+    get y() {
         return this.#data[1];
     }
-
-    static add(a, b){
+    get z() {
+        return this.#data[2];
+    }
+    //}
+    static add(a, b) {
         return new Vector(a.x + b.x, a.y + b.y);
     }
-
-    static sub(a, b){
+    static sub(a, b) {
         /* perhaps this will be a problem. We say, in English, subtract b from a or subtract a from b? We could say both actually ;^) */
         return new Vector(a.x - b.x, a.y - b.y);
     }
-
-    sub(other){
+    sub(other) {
         this.#data[0] -= other.x;
         this.#data[1] -= other.y;
         return this;
-        this.#data.forEach((_, i) => this.#data[i] -= other[i]);
+        this.#data.forEach((_, i) => (this.#data[i] -= other[i]));
     }
-
-    get mag(){
-        return Math.sqrt(this.#data[0] * this.#data[0] + this.#data[1] * this.#data[1]);
+    get mag() {
+        return Math.sqrt(
+            this.#data[0] * this.#data[0] + this.#data[1] * this.#data[1]
+        );
     }
-
-    toString(){
-        let output = [];
-        output.push('{');
-        [...'xy'].forEach((l, i) => output.push(`${l}: ${this.#data[i]}, `));
-        output.push('}');
-        return output.join('');
+    toString() {
+        // Do I need it?
+        return `V#[${this.#data}]`;
     }
-
-    mult(scalar){
-        this.#data.forEach((_, i) => this.#data[i] *= scalar);
+    mult(scalar) {
+        this.#data.forEach((_, i) => (this.#data[i] *= scalar));
         return this;
     }
+    add(v) {
+        // FIX IT
+        for (let i = 0; i < v.nodims; i++) {
+            this.#data[i] = this.#data[i] || 0;
+            this.#data[i] += v.get(i);
+        }
+        return this;
+    }
+    //{ Get any dimension
+    get(d) {
+        return this.#data[d];
+    }
+    //}
+    //{ Is it really needed? NumberOfDimensions
+    get nodims() {
+        return this.#data.length;
+    }
+    //}
 }
