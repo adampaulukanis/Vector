@@ -4,7 +4,7 @@
     "description": "Simple Vector class written in JS",
     "main": "index.js",
     "scripts": {
-        "test": "./node_modules/mocha/bin/mocha test*.js"
+        "test": "mocha test*.js"
     },
     "repository": {
         "type": "git",
